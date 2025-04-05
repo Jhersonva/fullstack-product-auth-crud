@@ -1,0 +1,99 @@
+/* ===== Estilos generales del sidebar ===== */
+.sidebar {
+  width: 250px;
+  background: #7CC9D0; /* Color celeste */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  position: fixed; /* Reestablece position: fixed */
+  top: 0;
+  left: 0;
+  height: 100vh; /* Usamos vh para que ocupe toda la altura de la pantalla */
+  z-index: 100;
+}
+
+/* Esconder el sidebar en móviles */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Mostrar cuando esté abierto */
+  }
+}
+
+/* ===== Botón de hamburguesa ===== */
+.sidebar-toggle {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 102; /* Mayor que el sidebar */
+}
+
+/* ===== Estilos adicionales para los elementos del sidebar ===== */
+.sidebar-header {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.sidebar-logo {
+  width: 100%;
+  max-width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  margin-top: 2rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Botón de cerrar sesión ===== */
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: auto;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
